@@ -92,9 +92,10 @@ const styles = StyleSheet.create({
   },
   h1:{
     fontSize:'2em',
+    fontWeight:'bold',
     color:'rgb(33,150,243)',
     backgroundColor:'white',
-    marginBottom:'40px'
+    marginBottom:'40px',
   },
   row:{
     flexDirection:'row',
@@ -112,5 +113,5 @@ const styles = StyleSheet.create({
   },
   img: {
     height: '100%',
-  }
+  },
 });
