@@ -1,9 +1,10 @@
 
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, Button, ImageBackground } from 'react-native';
 import { Audio } from 'expo-av';
 
+const image = {uri: "https://cdn3.geckoandfly.com/wp-content/uploads/2018/11/530-audio-recording.jpg" };
 
 export default function App() {
   const [recording, setRecording] = React.useState();
@@ -60,30 +61,40 @@ export default function App() {
       return(
         <View key = {index} style = {styles.row}>
           <Text style={styles.fill}>Recording {index + 1} - {recordingLine.duration}</Text>
-          <Button style={styles.button} onPress={() => recordingLine.sound.replayAsync()} title="Play"></Button>
+          <Button style={styles.button} onPress={() => recordingLine.sound.replayAsync()} title="Play Recording"></Button>
         </View>
       );
     });
   }
   return (
-    <View style={styles.container}>
-      <Text>{message}</Text>
-      <Button 
-         title={recording ? 'Stop Recording' : 'Start Recording'}
-         onPress={recording ? stopRecording : startRecording}
-        />
-        {getRecordingLines()}
-      <StatusBar style="auto" />
-    </View>
+    
+      <View style={styles.container}>
+          <Text style={styles.h1}>My Recording App</Text>
+          <Text>{message}</Text>
+          <Button 
+            title={recording ? 'Stop Recording' : 'Start Recording'}
+            onPress={recording ? stopRecording : startRecording}
+            />
+            {getRecordingLines()}
+          <StatusBar style="auto" />
+      </View>
+  
+    
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor:'white'
+  },
+  h1:{
+    fontSize:'2em',
+    color:'rgb(33,150,243)',
+    backgroundColor:'white',
+    marginBottom:'40px'
   },
   row:{
     flexDirection:'row',
@@ -92,9 +103,14 @@ const styles = StyleSheet.create({
   },
   fill:{
     flex: 1,
-    margin: 16
+    margin: 16,
+    backgroundColor:'rgb(33,150,243)',
+    color:'white'
   },
   button:{
-    margin: 16
+    margin: 16,
+  },
+  img: {
+    height: '100%',
   }
 });
