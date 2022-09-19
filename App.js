@@ -12,7 +12,7 @@ export default function App() {
 
   async function startRecording(){
     try{
-      const permission = await Audio.requestPermissionAsync();
+      const permission = await Audio.requestPermissionsAsync();
 
       if(permission.status === "granted"){
         await Audio.setAudioModeAsync({
@@ -81,7 +81,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'black',
+    backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'center',
   },
