@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button, ImageBackground } from 'react-native';
+import { StyleSheet, Text, View, Button, } from 'react-native';
 import { Audio } from 'expo-av';
 
 const image = {uri: "https://cdn3.geckoandfly.com/wp-content/uploads/2018/11/530-audio-recording.jpg" };
@@ -83,6 +83,7 @@ export default function App() {
   );
 }
 
+const radius = 20;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -91,10 +92,9 @@ const styles = StyleSheet.create({
     backgroundColor:'white'
   },
   h1:{
-    fontSize:'2em',
+    fontSize:'1.2em',
     fontWeight:'bold',
     color:'rgb(33,150,243)',
-    backgroundColor:'white',
     marginBottom:'40px',
   },
   row:{
@@ -110,6 +110,7 @@ const styles = StyleSheet.create({
   },
   button:{
     margin: 16,
+    borderRadius: radius,
   },
   img: {
     height: '100%',
