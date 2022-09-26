@@ -3,6 +3,7 @@ import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button, } from 'react-native';
 import { Audio } from 'expo-av';
+import { TouchableOpacity } from 'react-native-web';
 
 const image = {uri: "https://cdn3.geckoandfly.com/wp-content/uploads/2018/11/530-audio-recording.jpg" };
 
@@ -62,6 +63,7 @@ export default function App() {
         <View key = {index} style = {styles.row}>
           <Text style={styles.fill}>Recording {index + 1} - {recordingLine.duration}</Text>
           <Button style={styles.button} onPress={() => recordingLine.sound.replayAsync()} title="Play Recording"></Button>
+          
         </View>
       );
     });
